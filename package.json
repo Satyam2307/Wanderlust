@@ -1,11 +1,8 @@
 {
-  "engines" : {
-      "node": "26.5.0"
-  },
   "name": "air-bnb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
