@@ -1,0 +1,399 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* =========================================================
+   AIRBNB NAVBAR SEARCH STYLING
+   ========================================================= */
+
+.search-form {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 2.5rem;
+    padding: 0.3rem 0.4rem 0.3rem 1.25rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease-in-out;
+}
+
+.search-form:hover,
+.search-form:focus-within {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #c0c0c0;
+}
+
+.search-inp {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 0.9rem;
+    padding: 0.35rem 0.5rem;
+    background: transparent !important;
+    color: #222222;
+    min-width: 14rem;
+}
+
+.search-inp::placeholder {
+    color: #717171;
+    font-size: 0.88rem;
+}
+
+.btn-search {
+    background-color: #fe424d !important;
+    color: #ffffff !important;
+    border-radius: 2rem !important;
+    padding: 0.45rem 1.15rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 2px 4px rgba(254, 66, 77, 0.25);
+    white-space: nowrap;
+}
+
+.btn-search:hover {
+    background-color: #e03b46 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(254, 66, 77, 0.38);
+}
+
+.btn-search:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(254, 66, 77, 0.2);
+}
+
+.btn-search i {
+    font-size: 0.82rem;
+}
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text b {
+    font-weight: 600;
+}
+
+.listing-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.show-img {
+    height: min(52vw, 28rem);
+}
+
+.listing-detail-card {
+    border: 0 !important;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.listing-detail-card .card-body,
+.review-card .card-body {
+    padding: 1.25rem !important;
+}
+
+.listing-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    color: #4b5563;
+}
+
+.listing-meta i {
+    color: #fe424d;
+    margin-right: 0.25rem;
+}
+
+.review-section,
+.review-list {
+    border-top: 1px solid #dee2e6;
+}
+
+.review-card {
+    border-color: #e9ecef;
+}
+
+.review-rating {
+    color: #fe424d;
+    font-size: 0.9rem;
+}
+
+.reviewer-name {
+    color: #222222;
+    font-weight: 700;
+}
+
+.btns {
+    display: flex;
+}
+
+.edit-btn, .add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+/* =========================================================
+   AIRBNB FILTER PANEL & TAX TOGGLE STYLES
+   ========================================================= */
+
+.filters-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.filters-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+#filters {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    padding: 0.5rem 0.25rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    width: 100%;
+}
+
+#filters::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none !important;
+    color: #717171 !important;
+    opacity: 0.72;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.5rem;
+    min-width: fit-content;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.filter:hover {
+    opacity: 1;
+    color: #222222 !important;
+    border-bottom: 2px solid #b0b0b0;
+}
+
+.filter.filter-active,
+.filter-active {
+    opacity: 1 !important;
+    color: #222222 !important;
+    border-bottom: 2px solid #222222 !important;
+}
+
+.filter-active p {
+    font-weight: 600 !important;
+    color: #222222 !important;
+}
+
+.filter i {
+    font-size: 1.25rem;
+    margin-bottom: 0.15rem;
+}
+
+.filter p {
+    font-size: 0.75rem;
+    margin: 0.25rem 0 0 0;
+    white-space: nowrap;
+}
+
+.filter-arrow-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #222222;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.15s ease-in-out;
+    flex-shrink: 0;
+    margin: 0 0.4rem;
+}
+
+.filter-arrow-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    border-color: #999999;
+}
+
+.tax-toggle {
+    border: 1px solid #dcdcdc;
+    border-radius: 0.75rem;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    height: 3.25rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+}
+
+.tax-toggle:hover {
+    border-color: #222222;
+}
+
+.tax-toggle .form-check {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tax-toggle .form-check-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #222222;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tax-toggle .form-check-input {
+    cursor: pointer;
+    width: 2.25rem;
+    height: 1.25rem;
+}
+
+.tax-toggle .form-check-input:checked {
+    background-color: #222222;
+    border-color: #222222;
+}
+
+.tax-info {
+    display: none;
+    font-style: normal;
+    color: #717171;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.active-filter-banner {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.empty-listings-state {
+    background-color: #fafafa;
+    border-radius: 1rem;
+    border: 1px dashed #d5d5d5;
+}
+
+@media (max-width: 992px) {
+    .filters-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    .tax-toggle {
+        align-self: flex-start;
+    }
+}
