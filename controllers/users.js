@@ -1,8 +1,10 @@
+const User = require("../models/user.js");
+
 module.exports.renderSignUpForm = (req , res) => {
     res.render("users/signup.ejs");
 };
 
-module.exports.signup = (async(req , res) => {
+module.exports.signup = async (req, res, next) => {
     try {
         let { username, email, password } = req.body;
 
@@ -19,10 +21,12 @@ module.exports.signup = (async(req , res) => {
             if(err){
                 return next(err);
             }
-        req.flash("success", "Welcome to wanderlust!");
-        res.redirect(req.session.redirectUrl);
+            req.flash("success", "Welcome to wanderlust!");
+            let redirectUrl = req.session.redirectUrl || "/listings";
+            delete req.session.redirectUrl;
+            res.redirect(redirectUrl);
         });
-        } catch(e) {
+    } catch(e) {
         if (e.code === 11000) {
             req.flash("error", "A user with the given email is already registered");
         } else {
@@ -30,7 +34,7 @@ module.exports.signup = (async(req , res) => {
         }
         res.redirect("/signup");
     }
-});
+};
 
 module.exports.renderLoginForm = (req , res) => {
     res.render("users/login.ejs");
