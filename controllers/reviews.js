@@ -1,7 +1,8 @@
 const Listing = require("../models/listing");
 const Review = require("../models/review");
+const ExpressError = require("../utils/ExpressError.js");
 
-module.exports.createReview = (async (req, res) => {
+module.exports.createReview = async (req, res) => {
     const listing = await Listing.findById(req.params.id);
     if (!listing) {
         throw new ExpressError(404, "Listing Not Found!");
@@ -14,20 +15,12 @@ module.exports.createReview = (async (req, res) => {
     req.flash("success" , "New Review Created!");
 
     res.redirect(`/listings/${listing._id}`);
-});
+};
 
-module.exports.destroyReview = (async (req, res) => {
-    const listing = await Listing.findOneAndUpdate(
-        { _id: req.params.id, reviews: req.params.reviewId },
-        { $pull: { reviews: req.params.reviewId } },
-        { new: true }
-    );
-
-    if (!listing) {
-        throw new ExpressError(404, "Review Not Found!");
-    }
-
-    await Review.findByIdAndDelete(req.params.reviewId);
-      req.flash("success" , "Review Deleted!");
-    res.redirect(`/listings/${listing._id}`);
-});
+module.exports.destroyReview = async (req, res) => {
+    let { id, reviewId } = req.params;
+    await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+    await Review.findByIdAndDelete(reviewId);
+    req.flash("success" , "Review Deleted!");
+    res.redirect(`/listings/${id}`);
+};
